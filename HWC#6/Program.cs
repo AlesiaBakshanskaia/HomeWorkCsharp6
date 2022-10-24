@@ -1,11 +1,27 @@
 ﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-// Console.WriteLine("Введите несколько цифр через пробел");
-// string members = Console.ReadLine()!;
+Console.WriteLine("Введите несколько чисел через пробел");
+string Numbers = Console.ReadLine()!;
+string[] negative = Numbers.Split(new char[] { ' '});
+//string[] negative = Numbers.Split(new char[] { ' ', '.', ',', }, StringSplitOptions.RemoveEmptyEntries);
+double[] Array = new double [negative.Length];
+for (int i = 0; i < negative.Length; i++) {
+        Array[i] = Convert.ToDouble(negative[i]);
+   }
+Console.WriteLine(String.Join(" ", Array));
+
+
+int count = 0;
+for (int i = 0; i < Array.Length; i++) { 
+    if (Array[i] > 0){
+        count += 1;
+    }
+}
+Console.WriteLine($"Вы ввели {count} цифр(у,ы) больше нуля");
 
 //Доп.Задача 
 //Найти произведение всех элементов массива целых чисел, меньших заданного числа. Размерность массива –10. Заполнение массива осуществить случайными числами от 50 до 100.
 
-Console.WriteLine("Введите число N");
+/*Console.WriteLine("Введите число N");
 int N = int.Parse(Console.ReadLine()!);
 int[] Array = GetArray(10, 50, 100);
 Console.WriteLine(String.Join(" ", Array));
@@ -35,3 +51,4 @@ int[] GetArray (int size, int min, int max){
     }
     return res;
 }
+*/
