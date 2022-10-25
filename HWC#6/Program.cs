@@ -1,4 +1,35 @@
 ﻿// Задача 41: Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+// Первый вариант решения
+int[] Array = GetArray(5);
+Console.WriteLine(String.Join(" ", Array));
+Console.WriteLine($"Вы ввели {numplus(Array)}  чисел больше нуля");
+
+
+int numplus (int[] array){
+    int count = 0;
+    foreach (int element in Array){
+        if (element > 0){
+            count += 1;
+        }
+        
+    }
+    return count;
+}
+
+int[] GetArray (int size){
+    int[] res = new int[size];
+    for (int i = 0; i < size; i++){
+        Console.WriteLine("Введите  целое число");
+        res[i] = int.Parse(Console.ReadLine()!);
+    }
+    return res;
+}
+
+
+
+
+/*
+// Второй вариант решения
 Console.WriteLine("Введите несколько чисел через пробел");
 string Numbers = Console.ReadLine()!;
 string[] negative = Numbers.Split(new char[] { ' '});
@@ -17,6 +48,10 @@ for (int i = 0; i < Array.Length; i++) {
     }
 }
 Console.WriteLine($"Вы ввели {count} цифр(у,ы) больше нуля");
+*/
+
+
+
 
 //Доп.Задача 
 //Найти произведение всех элементов массива целых чисел, меньших заданного числа. Размерность массива –10. Заполнение массива осуществить случайными числами от 50 до 100.
